@@ -12,11 +12,12 @@
                 <h2>@product.Name</h2>
                 @if (product.Image == null)
                 {
-                    <img src="~/img/products/placeholder.png" alt="Product Image" class="thumb" />
+                <img src="~/img/products/placeholder.png" alt="Product Image" class="thumb" />
                 }
                 else
                 {
-                    <img src="~/img/products/@product.Image" alt="Product Image" class="thumb" />
+                <img src="~/img/products/@product.Image" alt="Product Image" class="thumb" />
+                <p>Sorry there are no products in the selected categpry</p>
                 }
                 <p>@string.Format("{0:c}", product.Price)</p>
                 <form method="post" action="/Shop/AddToCart">
