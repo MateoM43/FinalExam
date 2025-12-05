@@ -69,3 +69,14 @@ public class CategoriesControllerTests
         // assert 
         Assert.AreEqual("Index", result.ViewName);
     }
+
+    [TestMethod]
+    public void DeleteLoadsView()
+    {
+        // arrange 
+        var controller = _context.Category(Index);
+        // act 
+        var result = (ViewResult)controller.Delete();
+        // assert 
+        Assert.AreEqual("Delete", result.ViewName);
+    }
