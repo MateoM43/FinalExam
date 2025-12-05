@@ -38,7 +38,7 @@ public class CategoriesControllerTests
     public void IndexLoadsView()
     {
         // arrange - set up required vars / objs.  moved to TestInitialize
-
+        var controller = new CategoriesController();
         // act - call method and store result.
         // Must cast IActionResult return type to ViewResult to see the View Name
         var result = (ViewResult)controller.Index();
@@ -59,5 +59,13 @@ public class CategoriesControllerTests
     }
     #endregion
 
-   
-}
+    [TestMethod]
+    public void  DeleteRemovesCategory()
+    {
+        // arrange 
+        var controller = _context.Category();
+        // act 
+        var result = (ViewResult)controller.Index(); 
+        // assert 
+        Assert.AreEqual("Index", result.ViewName);
+    }
